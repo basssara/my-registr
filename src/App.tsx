@@ -5,7 +5,7 @@ import Button from "./components/Button";
 import "./index.css";
 
 function App() {
-  const [change, setIsChage] = useState<boolean>(false);
+  const [change, setIsChage] = useState(false);
   return (
     <div>
       <div>
