@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import Registration from "./registration";
 import Login from "./login";
 import Button from "./components/Button";
 import "./index.css";
 
-function App() {
+const App: FC = () => {
   const [change, setIsChage] = useState(false);
   return (
     <div>

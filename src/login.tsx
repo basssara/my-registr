@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FC } from "react";
 import { IUser } from './components/types/IUser'
 
-const Login = () => {
+const Login: FC = () => {
   const [isEmail, setIsEmail] = useState("");
   const [isPassword, setIsPassword] = useState("");
   const [emailError, setEmailError] = useState('Укажите эмаил!');
   const [passwordError, setPasswordError] = useState('Укажите пароль!')
-  const [emailEpmty, setEmailEmpty] = useState(false)
+  const [emailEmpty, setEmailEmpty] = useState(false)
   const [passwordEpmty, setPasswordEmpty] = useState(false)
   const [isValid, setIsValid] = useState(false)
 
@@ -57,7 +57,7 @@ const Login = () => {
           Sign In
         </h2>
         <div className="rounded-md shadow-sm -space-y-px">
-          {(emailEpmty && emailError) && <div style={{ color: 'red' }}>{emailError}</div>}
+          {(emailEmpty && emailError) && <div style={{ color: 'red' }}>{emailError}</div>}
           <div>
             <label htmlFor="email-address" className="sr-only">
               Email Address
