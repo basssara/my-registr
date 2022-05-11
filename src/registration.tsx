@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import React, { useEffect, useState, FC, ChangeEvent } from "react";
 import { IUser } from './components/types/IUser'
 
 const Registration: FC = () => {
@@ -21,7 +21,7 @@ const Registration: FC = () => {
     }
   }, [emailError, passwordError])
 
-  const emailHandler = (e: any) => {
+  const emailHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setIsEmail(e.target.value)
     const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (!re.test(String(e.target.value).toLowerCase())) {
@@ -30,7 +30,7 @@ const Registration: FC = () => {
       setEmailError('')
     }
   }
-  const passwordHandler = (e: any) => {
+  const passwordHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setIsPassword(e.target.value)
     if (e.target.value.length < 3) {
       setPasswordError('Пароль не должен быть меньше 3')
@@ -42,7 +42,7 @@ const Registration: FC = () => {
     }
   }
 
-  const nameHandler = (e: any) => {
+  const nameHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setIsName(e.target.value)
     if (!e.target.value) {
       setNameError('Укажите имя!')
@@ -51,7 +51,7 @@ const Registration: FC = () => {
     }
   }
 
-  const blurHandler = (e: any) => {
+  const blurHandler = (e: ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {
       case 'email':
         setEmailEmpty(true)
