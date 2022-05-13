@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../apis/axios";
 
 const Home = () => {
-    return (
-        <>
-            <h1>Home</h1>
-        </>
-    )
-}
+  const [users, setUsers] = useState([]);
 
-export { Home }
+  useEffect(() => {
+    axiosInstance.get("/v1/users").then(({ data }) => {
+      setUsers(data);
+      console.log(data);
+    });
+  }, []);
+
+  return (
+    <>
+      
+    </>
+  );
+};
+
+export { Home };
