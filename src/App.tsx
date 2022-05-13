@@ -1,21 +1,23 @@
-import React, { useState, FC } from "react";
-import Registration from "./registration";
-import Login from "./login";
-import Button from "./components/Button";
+import React, { FC } from "react";
+import { Home } from "./pages/Home";
+import { SingUp } from "./pages/SingUp";
+import { SecondSignIn } from "./pages/SignIn";
+import { Routes, Route, Link } from "react-router-dom";
+import PageNotFound from "./pages/404";
 import "./index.css";
 
 const App: FC = () => {
-  const [change, setIsChage] = useState(false);
   return (
     <>
-      {change ? <Registration /> : <Login />}
-      <Button
-        handleClick={(e) => {
-          change ? setIsChage(false) : setIsChage(true);
-        }}
-      >
-        {change ? <p>Sign In</p> : <p>Sign Up</p>}
-      </Button>
+      <Link to='/'>Home</Link>
+      <Link to='/signup'>Sign Up</Link>
+      <Link to='/signin'>Sign IN</Link>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SingUp />} />
+        <Route path="/signin" element={<SecondSignIn />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </>
   );
 }
