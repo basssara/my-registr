@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../apis/axios";
+import { Navigate } from "react-router";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -11,11 +12,7 @@ const Home = () => {
     });
   }, []);
 
-  return (
-    <>
-      
-    </>
-  );
+  return <></>;
 };
 
 export { Home };
