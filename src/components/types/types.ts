@@ -1,6 +1,6 @@
 import { IUser } from "./IUser";
-export interface data {
-  user: IUser;
+export interface IData {
+  user: IUser[];
   isLoading: boolean;
   isError: string;
 }

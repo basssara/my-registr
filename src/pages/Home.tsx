@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../apis/axios";
 import { Navigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axiosInstance.get("/v1/users").then(({ data }) => {
-      setUsers(data);
-      console.log(data);
-    });
-  }, []);
-
-  return <></>;
+  return (
+    <>
+      <h1>Hello</h1>
+    </>
+  );
 };
 
 export { Home };
